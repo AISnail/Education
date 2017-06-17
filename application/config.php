@@ -19,9 +19,9 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
-    'app_status'             => '',
+    'app_status'             => 'test',
     // 是否支持多模块
     'app_multi_module'       => true,
     // 入口自动绑定模块
@@ -56,7 +56,7 @@ return [
     // +----------------------------------------------------------------------
 
     // 默认模块名
-    'default_module'         => 'index',
+    'default_module'         => 'www',
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
@@ -97,7 +97,7 @@ return [
     // 是否强制使用路由
     'url_route_must'         => false,
     // 域名部署
-    'url_domain_deploy'      => false,
+    'url_domain_deploy'      => true,
     // 域名根，如thinkphp.cn
     'url_domain_root'        => '',
     // 是否自动转换URL中的控制器和操作名
@@ -176,9 +176,17 @@ return [
     // +----------------------------------------------------------------------
     // | Trace设置 开启 app_trace 后 有效
     // +----------------------------------------------------------------------
-    'trace'                  => [
+    'trace' => [
         // 内置Html Console 支持扩展
-        'type' => 'Html',
+        'type'       => 'Html',
+        'trace_tabs' => [
+            'debug' => '调试',
+            'base'  => '基本',
+            'file'  => '文件',
+            'info'  => '流程',
+            'error' => '错误',
+            'sql'   => 'SQL',
+        ]
     ],
 
     // +----------------------------------------------------------------------
@@ -187,7 +195,7 @@ return [
 
     'cache'                  => [
         // 驱动方式
-        'type'   => 'File',
+        'type'   => '\app\driver\cache\Redis',
         // 缓存保存目录
         'path'   => CACHE_PATH,
         // 缓存前缀
