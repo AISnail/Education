@@ -11,6 +11,14 @@ Education
 
 ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PHP版本要求提升到5.4，优化核心，减少依赖，基于全新的架构思想和命名空间实现，是ThinkPHP突破原有框架思路的颠覆之作，其主要特性包括：
 
+## Need to do
+1. Fork 本项目到你仓库
+2. 克隆你自己仓库的项目到本地
+3. `git remote add git@github.com:AISnail/Education.git` 添加远程地址
+4. `git fetch esc master`
+5. `git merge esc master`
+
+
 ## Preferences
 
 * Editor
