@@ -195,7 +195,7 @@ return [
 
     'cache'                  => [
         // 驱动方式
-        'type'   => '\app\driver\cache\Redis',
+        'type'   => '\think\cache\driver\Redis.php',
         // 缓存保存目录
         'path'   => CACHE_PATH,
         // 缓存前缀
