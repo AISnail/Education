@@ -17,6 +17,7 @@ ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PH
 3. `git remote add git@github.com:AISnail/Education.git` 添加远程地址
 4. `git fetch esc master`
 5. `git merge esc master`
+6. https://www.kancloud.cn/manual/thinkphp5/122951
 
 
 ## Preferences
