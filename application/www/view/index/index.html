@@ -9,29 +9,25 @@
     <meta name="description" content="" />
     <meta name="copyright" content="www.hie.edu.cn" />
     <meta content="all" name="robots" />
+
+    <link href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css"/>
     <script type="text/javascript" src="http://www.eol.cn<?=__STATIC__?>/js/global/jQuery_latest.min.js" ignoreapd="false">
     </script>
     <script type="text/javascript" src="http://www.eol.cn<?=__STATIC__?>/js/global/jQuery_tabs.js" ignoreapd="false">
-
-
     </script>
     <script type="text/javascript" src="http://www.eol.cn<?=__STATIC__?>/js/global/jQuery_picFocus.js" ignoreapd="false" charset="utf-8">
-
-
-
-
     </script>
     <script type="text/javascript" src="<?=__STATIC__?>/js/ctrl.js" ignoreapd="false">
-
-
-
-
     </script>
     <link href="<?=__STATIC__?>/css/css.css" rel="stylesheet" type="text/css" ignoreapd="false">
     <base target="_blank" />
 </head>
-
 <body>
+
+<style>
+    li {list-style-type:none;}
+</style>
+
 <div class="top_bg">
     <div class="top"><h1 class="hide">中国高等教育学会</h1></div>
 </div>
@@ -96,7 +92,7 @@
             <span>|</span>
             <li class="left"><a href="http://editor.hie.edu.cn/" class="">投稿平台</a></li>
             <span>|</span>
-            <li class="left"><a href="<?=url('meeting/index');?>" class="">会议报名</a></li>
+            <li class="left"><a target="_self" href="<?=url('meeting/index');?>" class="">会议报名</a></li>
         </ul>
     </div>
 </div>
@@ -515,3 +511,17 @@
 <div style="display:none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257418590'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257418590' type='text/javascript'%3E%3C/script%3E"));</script></div>
 </body>
 </html>
+<div style="position: fixed;width:100%;z-index:9999991;height: 70%;background-color: rgba(0,0,0,0.8);bottom:0;color: white">
+    <div style="-webkit-font-smoothing: subpixel-antialiased; -moz-osx-font-smoothing: auto">
+        <h1>代办事项</h1>
+        <hr/>
+        <ul style="display: block;width: 50%;margin: 0 auto;position: relative; margin-top:30px;font-size: 30px; ">
+            <li> <input type="checkbox" id="c1" ><label for="c1"> 会议通知 </label></li>
+            <li> <input type="checkbox" id="c2"><label for="c2"> 会议日程安排</label></li>
+            <li> <input type="checkbox" id="c3"><label for="c3">  报道通知</label></li>
+            <li> <input type="checkbox" id="c4"><label for="c4">  用户中心【登陆|注册】</label></li>
+            <li> <input type="checkbox" id="c5"><label for="c5">  会议报名</label></li>
+            <li> <input type="checkbox" id="c6"> <label for="c6"> 组织机构</label></li>
+        </ul>
+    </div>
+</div>
