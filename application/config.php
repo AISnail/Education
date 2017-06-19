@@ -11,7 +11,7 @@
 
 // 静态文件
 define('__STATIC__','/static/');
-define('STATIC_VESION','2017.6.20');
+define('STATIC_VESION',time());
 
 return [
     // +----------------------------------------------------------------------
