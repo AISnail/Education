@@ -19,10 +19,6 @@ ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PH
 5. `git merge esc master`
 6. https://www.kancloud.cn/manual/thinkphp5/122951
 
-## Members List
-lee@z-za.com
-pushaowei0727@gmail.com
-
 ## Nginx
 ```
 # Education-develop
