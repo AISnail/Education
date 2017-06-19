@@ -1,11 +1,12 @@
 <?php
 
-namespace app\admin\controller;
+namespace app\trade\controller;
 
 use think\Controller;
+use think\Exception;
 use think\Request;
 
-class index extends Controller
+class checkout
 {
     /**
      * 显示资源列表
@@ -14,7 +15,7 @@ class index extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
