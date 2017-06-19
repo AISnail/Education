@@ -3,38 +3,19 @@
 namespace app\trade\controller;
 
 use think\Controller;
+use think\Exception;
 use think\Request;
 
-class Index extends Controller
+class checkout
 {
-
-    /**
-     * 定义一些无需前置操作
-     * @var array
-     */
-    protected $beforeActionList = [
-
-    ];
-
-    /**
-     * 定义前置操作
-     */
-    public function _initialize()
-    {
-        // 这里可以做一些全局配置
-    }
-
     /**
      * 显示资源列表
      *
      * @return \think\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
-        dd($request->param('get'));
-//        echo $request->token('__token__');
-//        return $this->fetch('index');
     }
 
     /**

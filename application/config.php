@@ -195,7 +195,7 @@ return [
 
     'cache'                  => [
         // 驱动方式
-        'type'   => '\think\cache\driver\Redis.php',
+        'type'   => 'Redis',
         // 缓存保存目录
         'path'   => CACHE_PATH,
         // 缓存前缀
@@ -213,7 +213,7 @@ return [
         // SESSION_ID的提交变量,解决flash上传跨域
         'var_session_id' => '',
         // SESSION 前缀
-        'prefix'         => 'think',
+        'prefix'         => 'e',
         // 驱动方式 支持redis memcache memcached
         'type'           => '',
         // 是否自动开启 SESSION
