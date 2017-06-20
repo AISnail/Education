@@ -14,14 +14,34 @@ ThinkPHP5在保持快速开发和大道至简的核心理念不变的同时，PH
 ## Need to do
 1. Fork 本项目到你仓库
 2. 克隆你自己仓库的项目到本地
-3. `git remote add git@github.com:AISnail/Education.git` 添加远程地址
-4. `git fetch esc master`
-5. `git merge esc master`
+3. `git remote add esc git@github.com:AISnail/Education.git` 添加远程地址
+4. `git fetch esc`
+5. `git merge esc/master`
 6. https://www.kancloud.cn/manual/thinkphp5/122951
 
-## Members List
-lee@z-za.com
-
+## Nginx
+```
+# Education-develop
+server {
+    listen       80;
+    server_name  *.eschool.com;
+    root        __PATH__/public;
+    index  index.html index.htm index.php;
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+       	include     /usr/local/etc/nginx/conf.d/php-fpm;
+        if (!-e $request_filename) {
+          rewrite  ^(.*)$  /index.php?s=$1  last;
+            break;
+        }
+       }
+     location ~ .*\.php$ {
+         fastcgi_split_path_info ^(.+\.php)(/.+)$;
+         include /usr/local/etc/nginx/fastcgi.9001.conf;
+    	   fastcgi_param  SCRIPT_FILENAME	__PATH__/public$fastcgi_script_name;
+       }
+}
+```
 
 ## Preferences
 
