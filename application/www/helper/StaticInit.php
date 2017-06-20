@@ -15,7 +15,7 @@ trait StaticInit
         $common = [
             'style'  => [
                 'css/base.css',
-                'css/style.css',
+                'css/style-min.css',
             ],
             'script' => [
                 'js/jquery-1.7.2.min.js',
@@ -25,6 +25,19 @@ trait StaticInit
             case 'meeting.index':
                 $options = [
                     'title'       => '中国高等教育学会-分支机构',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'user.register':
+                $options = [
+                    'title'       => '中国高等教育学会-用户注册',
                     'keywords'    => '',
                     'description' => '',
                     'style'       => [

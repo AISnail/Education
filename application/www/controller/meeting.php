@@ -29,8 +29,9 @@ class meeting extends Controller
      */
     public function index()
     {
-        return $this->fetch('index',['title'=>'中国高等教育学会-分支机构']);
+        return $this->fetch('index');
     }
+
 
     /**
      * 显示创建资源表单页.
