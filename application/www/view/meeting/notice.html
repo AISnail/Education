@@ -1,0 +1,91 @@
+{include file='common/header' /}
+<div class="container">
+    <div class="top_bg">
+        <div class="top"></div>
+    </div>
+    {include file='common/nav'/}
+    <!-- 主体-->
+    <div class="main">
+        {include file='common/icenter'/}
+        <div class="center" >
+            <div class="aside left">
+                <ul>
+                    <li class="hytz curr">
+                        <span>会议通知</span>
+                        <s></s>
+                    </li>
+                    <li class="hyap">
+                        <span>会议日程安排</span>
+                        <s></s>
+                    </li>
+                    <li class="bdtz">
+                        <span>报道通知</span>
+                        <s></s>
+                    </li>
+                </ul>
+            </div>
+            <div class="cont">
+                <div class="hytz1">
+                    <div class="text">
+                        <div class="text_title">
+                            <p class="name">“全面提升质量管理水平，全面提高教学综合改革成效”专题报告会报到通知</p>
+                            <p class="num"><span>高学会[2017]24号</span></p>
+                            <p><span>报名时间：2017-05-20 15:00-2017-06-20 18:00 截止报名</span></p>
+                        </div>
+                        <div class="text_cont">
+
+                        </div>
+                    </div>
+                    <form action="#" class="last">
+                        <input class="apply btn1" type="button" value="立即报名" onclick="location.href='/meeting/apply/mid/<?=$mid?>'"/>
+                    </form>
+                </div>
+                <div class="hyap1 box display-none">
+                    <div class="text">
+                        <div class="text_title">
+                            <p class="name">“全面提升质量管理水平，全面提高教学综合改革成效”专题报告会报到通知</p>
+                        </div>
+                        <div class="text_cont">
+                            <table>
+                            </table>
+                            <p class="red">(*以会议当天为准)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bdtz1 box display-none">
+                    <div class="text">
+                        <div class="text_title">
+                            <span class="tname">中国高等教育学会</span>
+                            <p class="name">“全面提升质量管理水平，全面提高教学综合改革成效”<br/>专题报告会报到通知</p>
+                            <p class="num"><span>高学会[2017]24号</span></p>
+                        </div>
+                        <div class="text_cont">
+                            一、报名时间<br/>
+                            5月18日08:00-16:00<br/>
+                            二、报到地点及联系电话
+                        </div>
+                        <form action="#" class="last">
+                            <input class="btn1" type="button" value="下载通知"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file='common/footer' /}
+<script>
+    $(function(){
+        $(".aside>ul>li").click(function(){
+            $(this).siblings().removeClass("curr");
+            $(this).addClass("curr");
+
+            var c=$(this).attr("class").split(" ")[0];
+            var cs= $("."+c+"1");
+            cs.siblings("i").addClass("display-none");
+            cs.siblings("h3").addClass("display-none");
+            cs.siblings("div").addClass("display-none");
+            cs.removeClass("display-none");
+        })
+
+    })
+</script>

@@ -19,8 +19,10 @@ class Tools
         if (count($res) != count($res, 1)) {
             $res = $res[0];//如果不是一维数组转成一维
         }
-        $styleArray = array_map(function ($aliases)use($cssTag) {
-            return '<link href="'.__STATIC__.$aliases.$cssTag.'" rel="stylesheet" />';
+        $styleArray = array_map(function ($aliases) use ($cssTag) {
+            if($aliases){
+                return '<link href="'.__STATIC__.$aliases.$cssTag.'" rel="stylesheet" />'.PHP_EOL;
+            }
         }, $res);
         return implode('', array_filter($styleArray));
     }
@@ -35,7 +37,9 @@ class Tools
             $res = $res[0];//如果不是一维数组转成一维
         }
         $styleArray = array_map(function ($aliases)use($cssTag) {
-            return '<script src="'.__STATIC__.$aliases.$cssTag.'" ></script>';
+            if($aliases){
+                return '<script src="'.__STATIC__.$aliases.$cssTag.'" ></script>'.PHP_EOL;
+            }
         }, $res);
         return implode('', array_filter($styleArray));
     }

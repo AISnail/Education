@@ -1,0 +1,290 @@
+{include file='common/header' /}
+<div class="container">
+    <div class="top_bg">
+        <div class="top"></div>
+    </div>
+    <div class="nav_bg">
+        <div class="nav">
+            <ul class="nav_item">
+                <li class="left"><a href="#">网站首页</a><span>|</span></li>
+                <li class="left"><a href="#">会议报名</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 主体-->
+    <div class="main">
+        {include file='../application/www/view/common/icenter.html'/}
+        <div class="cont">
+            <div class="order_detail cont_item">
+                <h3>报名详情</h3>
+                <table class="apply_detail">
+                    <thead>
+                    <tr>
+                        <th>会议</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>小计</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="huiyi">
+                            <span><b>2016年高等教育学会论坛</b></span><br/>
+                            <span class="dark"><b>会议时间</b>：2017-04-26 18:00</span>开始<br/>
+                            <span class="dark"><b>会议地点：</b>北京海淀大酒店</span>
+                        </td>
+                        <td>
+                            ￥<span>1600.00</span>
+                        </td>
+                        <td>
+                            ×<span>12</span>
+                        </td>
+                        <td>
+                            <b>￥<span>1600.00</span></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="huiyi">
+                            <span><b>2016年高等教育学会论坛</b></span><br/>
+                            <span class="dark"><b>会议时间</b>：2017-04-26 18:00</span>开始<br/>
+                            <span class="dark"><b>会议地点：</b>北京海淀大酒店</span>
+                        </td>
+                        <td>
+                            ￥<span>1600.00</span>
+                        </td>
+                        <td>
+                            ×<span>12</span>
+                        </td>
+                        <td>
+                            <b>￥<span>1600.00</span></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="huiyi">
+                            <span><b>2016年高等教育学会论坛</b></span><br/>
+                            <span class="dark"><b>会议时间</b>：2017-04-26 18:00</span>开始<br/>
+                            <span class="dark"><b>会议地点：</b>北京海淀大酒店</span>
+                        </td>
+                        <td>
+                            ￥<span>1600.00</span>
+                        </td>
+                        <td>
+                            ×<span>12</span>
+                        </td>
+                        <td>
+                            <b>￥<span>1600.00</span></b>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cont_item">
+                <h3>发票信息<span class="red">(特别提醒：发票会场现场领取)</span></h3>
+                <i><em class="red">*</em>&nbsp;&nbsp;&nbsp;单位名称：<span class="cname">中国高等教育学会</span></i>
+                <input class="display-none change_txt" type="text"/><a class="modify blue">修改</a><span>&nbsp;&nbsp;&nbsp;会议费</span>
+            </div>
+            <div class="cont_item">
+                <h3>报名人信息</h3>
+                姓名：<span>张三</span><br/>
+                性别：<span>男</span><br/>
+                手机：<span>17638478372</span><br/>
+                邮箱：<span>7397349@qq.com</span>
+            </div>
+            <div class="cont_item">
+                <h3>支付方式</h3>
+                <p class="pay_way">
+                    <a href="#"><img src="<?=__STATIC__?>imgs/way1.png" alt=""/></a>
+                    <a href="#"><img src="<?=__STATIC__?>imgs/way2.jpg" alt=""/></a>
+                    <a href="#"><img src="<?=__STATIC__?>imgs/way3.jpg" alt=""/></a>
+                </p>
+            </div>
+            <p class="other_way">
+                <a class="unfold">其他支付方式&gt;&gt;</a>
+                <a class="fold display-none">&lt;&lt;收起</a>
+            </p>
+            <form action="#" class="last">
+                <input class="sure_submit btn1" type="button" value="确认提交"/>
+            </form>
+        </div>
+    </div>
+<div class="cover display-none"></div>
+<div class="modify_cont display-none pop">
+    <p>
+        <span>发票信息</span>
+        <span class="close">X</span>
+    </p>
+    <ul class="invoice_item">
+        <li class="curr">普通发票</li>
+        <li>电子发票</li>
+    </ul>
+    <div class="info">
+        <form action="#">
+            <table class="tab_info">
+                <tr>
+                    <td class="txt_name"><em>*</em>发票抬头：</td>
+                    <td>
+                        <input class="txt" type="text" placeholder="请填写单位发票抬头"/>
+                        <span><a href="#" class="blue">保存</a><a class="blue" href="#">删除</a></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>发票内容：</td>
+                    <td>
+                        <input type="radio" name="invoice_cont" value="" checked="checked"/><span class="raopt">会务费</span>
+                        <input type="radio" name="invoice_cont" value=""/><span class="raopt">培训费</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>收票人姓名：</td>
+                    <td><input class="txt" type="text"/></td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>收票人手机：</td>
+                    <td><input class="txt" type="tel"/></td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>收票人地址：</td>
+                    <td><input class="txt" type="text"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="last">
+                        <input type="button" class="btn1" value="保存"/>
+                        <input type="button" class="btn2 close" value="返回"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="info display-none">
+        <form action="#">
+            <table class="tab_info">
+                <tr>
+                    <td class="txt_name"><em>*</em>发票抬头：</td>
+                    <td>个人</td>
+                </tr>
+                <tr>
+                    <td class="txt_name"> </td>
+                    <td>
+                        <input class="txt" type="text" placeholder="请填写单位发票抬头"/>
+                        <span><a href="#">保存</a><a class="blue" href="#">删除</a></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>发票内容：</td>
+                    <td>
+                        <input type="radio" name="invoice_cont" value="" checked="checked"/><span class="raopt">会务费</span>
+                        <input type="radio" name="invoice_cont" value=""/><span class="raopt">培训费</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>收票人姓名：</td>
+                    <td><input class="txt" type="text"/></td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>收票人手机：</td>
+                    <td><input class="txt" type="tel"/></td>
+                </tr>
+                <tr>
+                    <td class="txt_name"><em>*</em>收票人地址：</td>
+                    <td><input class="txt" type="text"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="last">
+                        <input type="button" class="btn1" value="保存"/>
+                        <input type="button" class="btn2 close" value="返回"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div class="cover_way pop display-none">
+    <p>
+        <span>请您及时汇款，以便订单尽快处理！订单号：1238448893938</span>
+        <span style="position: relative;right:-120px;">应付金额<i class="red">&nbsp;1600&nbsp;</i>元</span>
+        <span class="close">X</span>
+    </p>
+    <div class="cover_cont">
+        <span><b>公司转账</b><i>(到账周期为3个工作日)</i></span>
+        <hr/>
+        <div class="cont1">
+            <span class="red">尊敬的客户您好，如需公司线下汇款，请点击“确认并获取汇款识别码”。</span>
+            <span>确认后，请在7天内付清款项，超过10天未对账系统自动取消订单，到账周期为3个工作日。</span>
+            <form action="#">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <input class="sure_code btn_red" type="button" value="确认并获取汇款识别码"/>
+                        </td>
+                        <td>
+                            <i>汇款时将识别码填写至汇款单“用途”栏，超出一个工作日未对账，请提供订单号及汇款底单邮件至liuzhen@seeyon.com</i>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="cont2 display-none">
+            <span class="red">尊敬的客户您好，如需公司线下汇款，请点击“确认并获取汇款识别码”。</span>
+            <span><b>注意事项：汇款时需要注意以下信息，请牢记！</b></span>
+            <span>
+                    1.您的汇款识别码为：GJ12345678，线下公司转账需将此汇款识别码填写至电汇凭证的【汇款用途】、【附言】、【摘要】等栏内，汇款识别码组成：（GJ+订单号）。
+                    企业网银转账请务必将汇款识别码填写到附言、摘要、备注等栏内。<br/>
+                    （提醒：因不同银行备注字段不同，最好是将所有的可填写备注的地方都填写上汇款识别码。）<br/>
+                    2.线下公司转账汇款时备注汇款识别码，可确保订单及时核销，请务必填写正确，勿私自增加其他文字说明。<br/>
+                    3.线下公司转账订单，一个识别码对应一个订单和相应的金额，请勿多转账或者少转账。
+                </span>
+            <span><b>注意事项：汇款时需要注意以下信息，请牢记！</b></span>
+            <span>
+                    户名：中国高等教育学会<br/>
+                    账户：1109 0759 7012 2222<br/>
+                    开户行：招商银行北京青年路支行
+                </span>
+            <span>您的汇款验证码<i class="red">&nbsp;GJ12345698&nbsp;</i>已发送手机 133****1616</span>
+            <form action="#" class="last-same">
+                <input class="btn1" type="button" value="查看订单详情"/>
+                <input class="btn3" type="button" value="完善核对注册者信息"/>
+            </form>
+        </div>
+    </div>
+</div>
+{include file='../application/www/view/common/footer.html'/}
+<script>
+    $(function(){
+        $(".modify").click(function(){
+            $(".cover").removeClass("display-none");
+            $(".modify_cont").removeClass("display-none");
+            $(".invoice_item>li").click(function(){
+                $(".invoice_item>li").removeClass("curr");
+                $(this).toggleClass("curr");
+                $(".info").toggleClass("display-none");
+            })
+        })
+//        支付方式切换
+        $(".unfold").click(function(){
+            $(this).text("公司转账");
+            $(".fold").removeClass("display-none");
+//弹出公司转账
+            $(".sure_submit").click(function(){
+                $(".cover").removeClass("display-none");
+                $(".cover_way").removeClass("display-none");
+                $(".sure_code").click(function(){
+                    $(".cont1").addClass("display-none");
+                    $(".cont2").removeClass("display-none");
+                })
+            })
+        })
+        $(".close").click(function(){
+            $(".cover").addClass("display-none");
+            $(".modify_cont").addClass("display-none");
+            $(".cover_way").addClass("display-none");
+        })
+        $(".fold").click(function(){
+            $(".unfold").text("其他支付方式>>");
+            $(".fold").addClass("display-none");
+            $(".sure_submit").click(function(){
+                $(".cover").addClass("display-none");
+                $(".cover_way").addClass("display-none");
+            })
+        })
+    })
+    </script>
