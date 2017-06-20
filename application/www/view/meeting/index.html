@@ -5,46 +5,10 @@
         <div class="top_bg">
             <div class="top"></div>
         </div>
-        <div class="nav_bg">
-            <div class="nav">
-                <ul class="nav_item">
-                    <li class="left"><a href="http://hie.eol.com.cn">网站首页</a><span>|</span></li>
-                    <li class="left"><a href="/meeting/index.html">会议报名</a></li>
-                </ul>
-            </div>
-        </div>
+        {include file='common/nav'/}
         <!-- 主体-->
         <div class="main">
-            <div class="main_top">
-                <div class="top_left left">
-                    <img src="<?=__STATIC__?>imgs/position.png" alt=""/>
-                    <span>
-                        当前位置：<a href="http://hie.eol.com.cn">中国高等教育学会</a>＞
-                        <a href="conference.html">会议报名</a>＞
-                        <i class="gdjy1 curr">中国高等教育学会</i>
-                        <i class="fzjg1 display-none">中国高等教育学会分支机构</i>
-                        <i class="more1 display-none">更多分支机构</i>
-                    </span>
-                    <!--<input class="search" type="search" placeholder="搜索您感兴趣得会议"/>-->
-                    <!--<img class="btn_search" src="<?=__STATIC__?>imgs/search.png" alt=""/>-->
-                </div>
-                <ul class="top_right right">
-                    <li>欢迎登录</li>
-                    <li>
-                        <a class="userName">
-                            你好j34w
-                        </a>
-                        <span>|</span>
-                    </li>
-                    <li>
-                        <a href="basicInfo.html">个人中心</a>
-                        <span>|</span>
-                    </li>
-                    <li>
-                        <a href="#">退出</a>
-                    </li>
-                </ul>
-            </div>
+            {include file='common/icenter'/}
             <div class="center">
                 <div class="aside">
                     <div class="login">
@@ -68,31 +32,29 @@
                     </div>
                     <p class="organame">组织机构</p>
                     <ul>
-                        <li class="gdjy curr">
-                            <span>中国高等教育学会</span>
-                            <s></s>
-                        </li>
-                        <li class="fzjg">
-                            <span>中国高等教育学会分支机构</span>
-                            <s></s>
-                        </li>
-                        <li class="more">
-                            <span>更多分支机构</span>
+                        <?php if( !empty($organ_array) ):?>
+                        <?php foreach( $organ_array as $organ_val ): ?>
+                        <li <?=$organ_val['id'] == $organ_id ? 'class="curr"' : ''?> organ-id="<?=$organ_val['id']?>" >
+                                <span><?=$organ_val['name']?></span>
+                                <s></s>
+                            </li>
+                        <?php endforeach;?>
+                        <?php endif;?>
+                        <li <?=$organ_val['id'] < $organ_id ? 'class="curr more"' : 'class="more"'?> >
+                            <span >更多分支机构</span>
                             <s></s>
                         </li>
                     </ul>
                 </div>
                 <div class="cont right" style="margin-right: 20px;">
-                    <h3 class="gdjy1">中国高等教育学会</h3>
-                    <h3 class="fzjg1 display-none">中国高等教育学会分支机构</h3>
-                    <h3 class="more1 display-none">更多分支机构</h3>
+                    <h3 class="organ_title"><?=$organ_title?></h3>
                     <div id="gdjy" class="gdjy1 box">
                         <p class="doc">
                             <span>会议名称</span>
                             <span class="upload">单价</span>
                         </p>
                         <ul class="list">
-                            <li>
+                            <li metting_id="1">
                             <span class="title">
                                 <b>2016年高等教育学会得通知</b><br/>
                                 <span class="dark"><b>主办单位</b>：保健医学分会<b>&nbsp;2017-05-16&nbsp;05:37&nbsp;</b>开始报名</span>
@@ -111,56 +73,21 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
-            <div class="footer">
-                <div class="line_24">
-                    <p><a href="http://hie.eol.com.cn/overview_12570/20150121/t20150121_993152.shtml">联系我们</a>｜相关链接：<a href="http://www.moe.edu.cn">中华人民共和国教育部</a></p>
-                    <p>学会地址：北京市海淀区文慧园北路10号中教仪楼4层</p>
-                    <p>联系电话：010-59893295　010-59893297　京ICP备10021028号</p>
-                    <p>技术支持：<a href="http://www.eol.cn/">中国教育在线</a></p>
-                </div>
-                <div class="img_wx"><p align="center"><img src="<?=__STATIC__?>imgs/wx.jpg" width="72" height="72" /></p>
-                    <p align="center">官方微信</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="cover display-none"></div>
     <div class="coverWindow more_organize pop display-none">
         <p>
-            <span>分支机构64家</span>
+            <span>其他分支机构<?=count($hidden_organ)?>家</span>
             <span class="close" style="z-index: 2000;">X</span>
         </p>
         <div class="cover_cont">
             <ul class="item">
                 <li>
                     <ul>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                    </ul>
-                </li>
-                <li>
-                    <ul>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                    </ul>
-                </li>
-                <li>
-                    <ul>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
-                        <li><a href="#">保健医学分会<sup class="red">[10]</sup></a></li>
-                        <li>出国留学教育管理分会<sup class="red"></sup></li>
+                        <?php if(!empty($hidden_organ)):?>
+                        <?php foreach($hidden_organ as $hi_o_val):?>
+                            <li> <a href="/meeting/index/organ/<?=$hi_o_val['id']?>"><?=$hi_o_val['name']?> </a> <sup class="red"></sup></li>
+                        <?php endforeach;?>
+                        <?php endif;?>
                     </ul>
                 </li>
             </ul>
@@ -170,20 +97,21 @@
         </div>
     </div>
 </form>
-</body>
-</html>
+{include file='common/footer' /}
 <script>
     $(function(){
         $(".aside>ul>li").click(function(){
-            $(this).siblings().removeClass("curr");
-            $(this).addClass("curr");
-
-            var c=$(this).attr("class").split(" ")[0];
-            var cs= $("."+c+"1");
-            cs.siblings("i").addClass("display-none");
-            cs.siblings("h3").addClass("display-none");
-//            cs.siblings("div").addClass("display-none");
-            cs.removeClass("display-none");
+            var _this = $(this);
+            if(_this.attr('organ-id')  ){
+                window.location.href = '/meeting/index/organ/' + _this.attr('organ-id') + '.html';
+            }
+//            $(this).siblings().removeClass("curr");
+//            $(this).addClass("curr");
+//            var c = $(this).attr("class").split(" ")[0];
+//            var cs= $("."+c+"1");
+//            cs.siblings("i").addClass("display-none");
+//            cs.siblings("h3").addClass("display-none");
+//            cs.removeClass("display-none");
         })
 
         $(".more").click(function(){
@@ -195,7 +123,7 @@
             });
         })
         $(".list>li").click(function(){
-            window.open("notice_ydl.html");
+            window.location = '/meeting/notice/mid/'+$(this).attr('metting_id');
         })
     })
 </script>

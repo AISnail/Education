@@ -13,13 +13,13 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => 'rm-m5er2ao3dnxq07zj6o.mysql.rds.aliyuncs.com',
     // 数据库名
     'database'        => 'education',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'eschool',
     // 密码
-    'password'        => 'pushaowei',
+    'password'        => 'Psv123456',
     // 端口
     'hostport'        => '3306',
     // 连接dsn

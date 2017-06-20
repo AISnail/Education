@@ -2,25 +2,10 @@
 
 namespace app\www\controller;
 
-use app\www\helper\StaticInit;
-use think\Controller;
 use think\Request;
 
-class user extends Controller
+class user extends base
 {
-    use StaticInit;
-
-    /**
-     * 前置操作
-     * @param \think\Request $request
-     */
-    public function _initialize()
-    {
-        parent::_initialize();
-        $_request = Request::instance();
-        $page     = strtolower($_request->controller().'.'.$_request->action() );
-        $this->assign('options', $this->options($page));
-    }
     /**
      * 显示资源列表
      *

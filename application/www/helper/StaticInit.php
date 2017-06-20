@@ -48,6 +48,58 @@ trait StaticInit
                     ]
                 ];
                 break;
+            case 'meeting.notice':
+                $options = [
+                    'title'       => '中国高等教育学会-会议通知',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'meeting.apply':
+                $options = [
+                    'title'       => '中国高等教育学会-立即报名',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'apply.verify':
+                $options = [
+                    'title'       => '中国高等教育学会-提交订单',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'apply.triumph':
+                $options = [
+                    'title'       => '中国高等教育学会-报名',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
             default:
                 break;
         }

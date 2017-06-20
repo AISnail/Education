@@ -1,47 +1,40 @@
 <?php
-
 namespace app\www\controller;
 
-use app\www\helper\StaticInit;
-use think\Controller;
+
 use think\Request;
 
-class meeting extends Controller
+class meeting extends base
 {
-    use StaticInit;
-
-    /**
-     * 前置操作
-     * @param \think\Request $request
-     */
-    public function _initialize()
-    {
-        parent::_initialize();
-        $_request = Request::instance();
-        $page     = strtolower($_request->controller().'.'.$_request->action() );
-        $this->assign('options', $this->options($page));
-    }
-
     /**
      * 显示资源列表
      *
      * @return \think\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return $this->fetch('index');
-    }
+        /* --------------- 机构 --------------- */
+        $organ_array = [
+            ['id' => 1, 'name'=>'中国高等教育学会'],
+            ['id' => 2, 'name'=>'中国高等教育学会分支机构'],
+            ['id' => 3, 'name'=>'超神机构'],
+            ['id' => 4, 'name'=>'0牛逼机构'],
+            ['id' => 5, 'name'=>'1牛逼机构'],
+            ['id' => 6, 'name'=>'2牛逼机构']
+        ];
+
+        $old_array    = $organ_array;
+        $hidden_organ = array_splice($organ_array,2);
+        $organ_id     = $request->param('organ',1);
+        $a_key        = array_search($organ_id, array_column($old_array, 'id'));
+        $organ_title  = $old_array[$a_key ?? 0]['name'];
+
+        /* --------------- 会议 --------------- */
 
 
-    /**
-     * 显示创建资源表单页.
-     *
-     * @return \think\Response
-     */
-    public function create()
-    {
-        //
+        return $this->fetch('index',compact('organ_title','organ_array','old_array','hidden_organ','organ_id'));
     }
+
 
     /**
      * 保存新建的资源
@@ -51,7 +44,8 @@ class meeting extends Controller
      */
     public function save(Request $request)
     {
-        //
+        //处理报名逻辑
+
     }
 
     /**
@@ -60,42 +54,26 @@ class meeting extends Controller
      * @param  int  $id
      * @return \think\Response
      */
-    public function read($id)
+    public function notice(Request $request)
     {
-        //
+        return $this->fetch('notice',[
+            'mid'   => $this->mid,
+        ]);
     }
 
     /**
-     * 显示编辑资源表单页.
-     *
-     * @param  int  $id
-     * @return \think\Response
+     * 会议报名
      */
-    public function edit($id)
+    public function apply(Request $request)
     {
-        //
-    }
+       if($request->isPost()){
 
-    /**
-     * 保存更新的资源
-     *
-     * @param  \think\Request  $request
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * 删除指定资源
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function delete($id)
-    {
-        //
+            // 成功跳转支付
+            $this->redirect('apply/verify',['aid'=>'1']);
+       }else{
+           return $this->fetch('apply',[
+               'mid'   => $this->mid,
+           ]);
+       }
     }
 }

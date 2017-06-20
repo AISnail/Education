@@ -2,12 +2,20 @@
 
 namespace app\trade\controller;
 
-use think\Controller;
+
 use think\Exception;
 use think\Request;
 
-class checkout
+class checkout extends base
 {
+    /**
+     * 支付等待
+     */
+    public function start()
+    {
+        $this->redirect('www/apply/triumph');
+    }
+
     /**
      * 显示资源列表
      *

@@ -10,8 +10,8 @@ $optionsRender = function($key) use ($options) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="csrf-token" content="<?=app\library\Nocsrf::generate('csrf_token')?>">
     <title><?php echo $optionsRender('title');?></title>
     <?php echo app\library\Tools::style($optionsRender('style'));?>
+    <?php echo app\library\Tools::script($optionsRender('script'));?>
 </head>
 <body>
