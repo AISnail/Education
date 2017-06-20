@@ -5,16 +5,16 @@ namespace app\admin\controller;
 use think\Controller;
 use think\Request;
 
-class index extends Controller
+class index extends Base
 {
     /**
-     * 显示资源列表
+     * 显示后台主页页面
      *
      * @return \think\Response
      */
     public function index()
     {
-        //
+        return $this->fetch();
     }
 
     /**
