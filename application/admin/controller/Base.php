@@ -6,10 +6,12 @@ use think\Request;
 
 use app\library\auth\Auth;
 use app\admin\model\Admin as AdminModel;
-use app\model\Menu as MenuModel;
+use app\admin\model\AuthRule;
 
 class Base extends Controller
 {
+    // 不需要检查权限的操作名，全部小写
+    protected $noNeedRight = [];
 
     public function _initialize()
     {
@@ -30,15 +32,19 @@ class Base extends Controller
         define('CONTROLLER_NAME',strtolower($request->controller()));
         define('MODULE_NAME',strtolower($request->module()));
         define('ACTION_NAME',strtolower($request->action()));
-        $path = '/' . MODULE_NAME . '/' . CONTROLLER_NAME . '/' . ACTION_NAME;
-        $auth = new Auth();
-        $result = $auth->check($path,session('user.id'));
-        
+
+        $path = '/' . CONTROLLER_NAME . '/' . ACTION_NAME;
         $this->assign('path',$path);
+        if(!$this->checkAuth($path)){
+            $this->error('权限不够');
+        }
+
+
+
         //输出用户信息
         $this->assign('username',session('user.username'));
         //获取菜单并输出
-        $menus = MenuModel::getMenus();
+        $menus = AuthRule::getMenus();
         /*
         $menus = session('menus');
         if(!isset($menus)){
@@ -47,7 +53,7 @@ class Base extends Controller
         }
         */
         //$this->init_menus($menus, $path);
-        //$this->assign('menus', $menus);
+        $this->assign('menus', $menus);
     }
 
 
@@ -71,5 +77,19 @@ class Base extends Controller
                 }
             }
         }
+    }
+
+    /**
+     * 检查权限
+     *
+     */
+    private function checkAuth($path)
+    {
+        if(in_array(ACTION_NAME,$this->noNeedRight)){
+            return true;
+        }
+        $auth = new Auth();
+        $result = $auth->check($path,session('user.id'));
+        return $result;
     }
 }

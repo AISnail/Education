@@ -9,6 +9,14 @@ class Test extends Controller
     public function index()
     {
         $menus = AuthRule::getMenus();
-        halt($menus);
+        foreach ($menus as $value) {
+            echo $value->title;
+            echo '<br/>';
+            foreach ($value->subMenu as $sub) {
+                echo '---';
+                echo $sub->title;
+                echo '<br/>';
+            }
+        }
     }
 }
