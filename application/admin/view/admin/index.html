@@ -1,0 +1,116 @@
+{extend name="base" /} {block name="css"}
+<link href="//cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css" rel="stylesheet"> {/block} {block name="content"}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box box-solid">
+            <div id="toolbar" class="toolbar">
+                <button id="btn_add" type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;新增
+                </button>
+                <button id="btn_edit" type="button" class="btn btn-info disabled">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;修改
+                </button>
+                <button id="btn_delete" class="btn btn-danger disabled">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;删除
+                </button>
+            </div>
+            <div class="box-body">
+                <table id="table" data-toggle="table" data-url="/admin/tabledata" data-method="post" data-toolbar="#toolbar" data-pagination="true"
+                    data-click-to-select="true" data-search="true" data-show-toggle="true" data-show-columns="true" data-page-size="5"
+                    class="table table-hover">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{/block} {block name="js"}
+<script src="//cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table-locale-all.js"></script>
+<!-- toastr -->
+<script src="//cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    // 初始化表格
+    $('#table').bootstrapTable({
+        columns: [
+            { field: 'state', checkbox: true },
+            { field: 'id', title: 'ID' },
+            { field: 'username', title: '用户名' },
+        ],
+        onCheck: function (row, element) {
+            changeButton();
+        },
+        onUncheck: function (row, element) {
+            changeButton();
+        },
+        onCheckAll: function (rows) {
+            changeButton();
+        },
+        onUncheckAll(rows) {
+            changeButton();
+        }
+    });
+    // 修改按钮状态
+    function changeButton() {
+        var datas = $('#table').bootstrapTable('getSelections');
+        if (datas.length > 0) {
+            $('#btn_delete').removeClass('disabled');
+            $('#btn_edit').removeClass('disabled');
+        } else {
+            $('#btn_delete').addClass('disabled');
+            $('#btn_edit').addClass('disabled');
+        }
+    }
+    $("#btn_add").click(function () {
+        layer.open({
+            type: 2,
+            title: '添加管理员',
+            content: '/admin/create',
+            area: ['600px', '400px']
+        });
+    });
+
+    $("#btn_delete").click(function () {
+        var datas = $('#table').bootstrapTable('getSelections');
+        if (datas.length == 0) {
+            return false;
+        }
+
+        var ids = [];
+        for (var i = 0; i < datas.length; i++) {
+            ids[i] = datas[i].id;
+        }
+        var data = { id: ids };
+        layer.confirm('确认删除？', {
+            btn: ['YES', 'NO']
+        }, function (index, layero) {
+            $.ajax({
+                async: true,
+                type: "GET",
+                data: data,
+                url: '/admin/delete',
+                error: function (request) {
+                    layer.close(this);
+                },
+                success: function (data) {
+                    if (data.code === 1) {
+                        layer.closeAll();
+                        layer.ready(function () {
+                            layer.msg(data.msg, { icon: 1 });
+                        });
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else if (data.code === 0) {
+                        layer.closeAll();
+                        layer.msg(data.msg, { icon: 5 });
+                    }
+                }
+            });
+
+        });
+    });
+
+</script>
+{/block}

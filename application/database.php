@@ -19,7 +19,11 @@ return [
     // 用户名
     'username'        => 'eschool',
     // 密码
+<<<<<<< HEAD
+    'password'        => '',
+=======
     'password'        => 'Psv123456',
+>>>>>>> esc/master
     // 端口
     'hostport'        => '3306',
     // 连接dsn
