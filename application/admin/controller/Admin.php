@@ -12,7 +12,7 @@ class Admin extends Base
 {
     protected $noNeedRight = ['tabledata','create'];
     /**
-     * 显示资源列表
+     * 显示管理员列表列表
      *
      * @return \think\Response
      */
