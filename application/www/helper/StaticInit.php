@@ -15,7 +15,7 @@ trait StaticInit
         $common = [
             'style'  => [
                 'css/base.css',
-                'css/style.css',
+                'css/style-min.css',
             ],
             'script' => [
                 'js/jquery-1.7.2.min.js',
@@ -25,6 +25,71 @@ trait StaticInit
             case 'meeting.index':
                 $options = [
                     'title'       => '中国高等教育学会-分支机构',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'user.register':
+                $options = [
+                    'title'       => '中国高等教育学会-用户注册',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'meeting.notice':
+                $options = [
+                    'title'       => '中国高等教育学会-会议通知',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'meeting.apply':
+                $options = [
+                    'title'       => '中国高等教育学会-立即报名',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'apply.verify':
+                $options = [
+                    'title'       => '中国高等教育学会-提交订单',
+                    'keywords'    => '',
+                    'description' => '',
+                    'style'       => [
+
+                    ],
+                    'script'      => [
+
+                    ]
+                ];
+                break;
+            case 'apply.triumph':
+                $options = [
+                    'title'       => '中国高等教育学会-报名',
                     'keywords'    => '',
                     'description' => '',
                     'style'       => [

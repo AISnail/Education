@@ -1,0 +1,55 @@
+{include file='common/header' /}
+<div class="container">
+    <div class="top_bg">
+        <div class="top"></div>
+    </div>
+    {include file='common/nav'/}
+    <!-- 主体-->
+    <div class="main">
+        <div class="main_top">
+            <span>欢迎注册</span>
+            <span class="right">已有账号？<a class="blue" href="/meeting/index.html">请登录</a></span>
+        </div>
+        <div class="cont">
+            <form action="#">
+                <table class="tab_info">
+                    <tr>
+                        <td class="txt_name">用户名：</td>
+                        <td><input type="text" class="txt" placeholder="您的账户名和登录名"/></td>
+                    </tr>
+                    <tr>
+                        <td class="txt_name">设置密码：</td>
+                        <td><input type="password" class="txt" placeholder="建议至少两种字符组合"/></td>
+                    </tr>
+                    <tr>
+                        <td class="txt_name">确认密码：</td>
+                        <td><input type="password" class="txt" placeholder="请再次输入密码"/></td>
+                    </tr>
+                    <tr>
+                        <td class="txt_name">邮箱验证：</td>
+                        <td><input type="text" class="txt" placeholder="建议使用常用邮箱"/></td>
+                    </tr>
+                    <tr>
+                        <td class="txt_name">中国0086：</td>
+                        <td><input type="text" class="txt" placeholder="建议使用常用手机"/></td>
+                    </tr>
+                    <tr>
+                        <td class="txt_name">手机验证码：</td>
+                        <td>
+                            <input type="text" class="txt" placeholder="请输入手机验证码"/>
+                        </td>
+                    </tr>
+                    <tr class="btn">
+                        <td colspan="2" class="last">
+                            <input class="save btn1" type="button" value="注册" onclick="window.open('registerSucc.html')"/>
+                        </td>
+                    </tr>
+                </table>
+                <input class="getcode" type="button" value="获取验证码"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <!-- 主体结束-->
+    {include file='common/footer' /}
